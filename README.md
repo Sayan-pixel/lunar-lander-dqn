@@ -44,7 +44,7 @@ State (8D) → Linear(128) → ReLU → Linear(128) → ReLU → Linear(64) → 
 | Hyperparameter | Value | Description |
 | :--- | :--- | :--- |
 | **Discount Factor ($\gamma$)** | `0.995` | Long-term horizon return weighting |
-| **Learning Rate ($lpha$)** | `5e-4` | Adam optimizer learning rate |
+| **Learning Rate ($alpha$)** | `5e-4` | Adam optimizer learning rate |
 | **Minibatch Size ($B$)** | `256` | Experience replay batch size |
 | **Replay Memory Capacity ($N$)** | `100,000` | Transitions buffer size |
 | **Update Frequency** | `4` steps | Interval between gradient descent steps |
