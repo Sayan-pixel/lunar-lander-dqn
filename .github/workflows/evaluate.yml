@@ -1,0 +1,40 @@
+name: CI Benchmark & Policy Evaluation
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  evaluate:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Set up Python 3.11
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+        cache: 'pip'
+
+    - name: Install Box2D System Dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y swig build-essential
+
+    - name: Install Python Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Verify Policy Model Weights
+      run: |
+        python -c "import numpy as np; pol = np.load('best_policy_2205.npy'); print('Loaded policy keys:', pol.dtype.names)"
+
+    - name: Run Headless 10-Episode Benchmark Test
+      run: |
+        python -c "import evaluate_agent, numpy as np, policy_2205; policy = np.load('best_policy_2205.npy'); score = evaluate_agent.evaluate_policy(policy, policy_2205.policy_action, total_episodes=10, render_first=0); print(f'Test Benchmark Score: {score:.2f}'); assert score >= 200, f'Policy score {score} failed solving threshold!'"

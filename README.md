@@ -1,5 +1,6 @@
 # 🚀 Lunar Lander Autonomous Agent (Deep Q-Network - DQN)
 
+[![CI Evaluation](https://github.com/Sayan-pixel/lunar-lander-dqn/actions/workflows/evaluate.yml/badge.svg)](https://github.com/Sayan-pixel/lunar-lander-dqn/actions/workflows/evaluate.yml)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-ee4c2c.svg)](https://pytorch.org/)
 [![Gymnasium](https://img.shields.io/badge/Gymnasium-Box2D-green.svg)](https://gymnasium.farama.org/)
