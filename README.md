@@ -13,6 +13,14 @@ The agent achieves an average evaluation reward of **+280.47 ± 18.4** over 100 
 
 ---
 
+
+## 🎬 Agent Performance Comparison
+
+| ❌ Before Training (Random Exploration) | ✅ After Training (Deep Q-Network Agent) |
+| :---: | :---: |
+| ![Untrained Agent](assets/untrained_lander.gif) | ![Trained Agent](assets/trained_lander.gif) |
+| *Chaotic thruster bursts, loss of pitch stability, hard crash* | *Smooth attitude stabilization, deceleration & soft touchdown (+280+)* |
+
 ## 🌟 Key Features
 
 - **Deep Q-Network (DQN)**: Multi-layer perceptron approximating optimal state-action value functions over continuous 8-dimensional space.
